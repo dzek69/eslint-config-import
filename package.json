@@ -1,0 +1,24 @@
+{
+  "name": "@dzek69/eslint-config-import",
+  "version": "0.0.1-beta.2",
+  "main": ".eslintrc.json",
+  "repository": "git@github.com:dzek69/eslint-config-import.git",
+  "author": "Jacek Nowacki @dzek69 <git-public@dzek.eu>",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test",
+    "docs": "node build-scripts/docs && jsdoc config/* README.md -t node_modules/docdash -d ./docs -u ./tutorials && node build-scripts/docs.after",
+    "prepack": "npm run test && npm run docs"
+  },
+  "peerDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "devDependencies": {
+    "docdash": "^1.1.1",
+    "eslint": "^8.18.0",
+    "eslint-plugin-import": "^2.26.0",
+    "fs-extra": "^7.0.1",
+    "jsdoc": "^3.6.10"
+  }
+}
