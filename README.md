@@ -2,7 +2,8 @@
 
 These are my preferred Import Plugin code style linting rules. You'll probably hate them.
 
-If you plan to use TypeScript make sure to install `@dzek69/eslint-config-import-typescript` as well.
+If you plan to use TypeScript make sure to install `@dzek69/eslint-config-import-typescript` as well. It takes care
+of disabling some base eslint rules.
 
 ## Idea behind these
 

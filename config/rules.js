@@ -28,6 +28,7 @@ const staticAnalysis = {
     "import/no-relative-parent-imports": OFF,
     "import/no-relative-packages": OFF,
     "import/no-empty-named-blocks": ERROR,
+    "import/consistent-type-specifier-style": ERROR
 };
 
 const warnings = {

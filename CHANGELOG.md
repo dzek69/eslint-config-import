@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [UNRELEASED]
 (nothing yet)
 
+## [1.2.0] - 2023-04-14
+### Added
+- `consistent-type-specifier-style` rule
+
 ## [1.1.0] - 2023-04-14
 ### Added
 - `no-empty-named-blocks` rule
