@@ -19,7 +19,7 @@ const staticAnalysis = {
     "import/no-cycle": [ERROR, {
         // maxDepth: 0 - don't use until linting goes slow
         ignoreExternal: true,
-        // allowUnsafeDynamicCyclicDependency: false, eslint complains on this, but it's disabled by default
+        allowUnsafeDynamicCyclicDependency: false,
     }],
     "import/no-useless-path-segments": [ERROR, {
         noUselessIndex: false,
@@ -27,6 +27,7 @@ const staticAnalysis = {
     }],
     "import/no-relative-parent-imports": OFF,
     "import/no-relative-packages": OFF,
+    "import/no-empty-named-blocks": ERROR,
 };
 
 const warnings = {
@@ -39,6 +40,8 @@ const warnings = {
         optionalDependencies: true,
         peerDependencies: false,
         bundledDependencies: false,
+        includeInternal: false,
+        includeTypes: true,
     }],
     "import/no-mutable-exports": ERROR,
     "import/no-unused-modules": OFF, // I don't understand it or it's broken
@@ -55,7 +58,10 @@ const moduleSystems = {
 const style = {
     "import/first": ERROR,
     "import/exports-last": ERROR,
-    "import/no-duplicates": ERROR,
+    "import/no-duplicates": [ERROR, {
+        considerQueryString: true,
+        "prefer-inline": false,
+    }],
     "import/no-namespace": OFF,
     "import/extensions": [ERROR, "ignorePackages", { "js": "always", "ts": "never" }],
     "import/order": [ERROR, {
@@ -74,13 +80,15 @@ const style = {
                 position: "before",
             }
         ],
+        "distinctGroup": true,
         "pathGroupsExcludedImportTypes": ["react"],
         "newlines-between": "always",
-        "warnOnUnassignedImports": true
+        "warnOnUnassignedImports": true,
+        "alphabetize": undefined
     }],
     "import/newline-after-import": [ERROR, {
         count: 1,
-        // considerComments: true, // @TODO report eslint not linking this
+        considerComments: true,
     }],
     "import/prefer-default-export": OFF,
     "import/max-dependencies": [WARN, {
@@ -97,6 +105,7 @@ const style = {
         "allowAnonymousClass": false,
         "allowAnonymousFunction": false,
         "allowCallExpression": false,
+        "allowNew": false,
         "allowLiteral": false,
         "allowObject": false
     }],
