@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [UNRELEASED]
 (nothing yet)
 
+## [1.3.0] - 2023-07-08
+### Removed
+- `import/extensions` rule
+### Fixed
+- `import/order` rule not handling *.css files as expected
+### Dev
+- replaced yarn with pnpm
+- added test file, config & script to test the rules immediately
+
 ## [1.2.0] - 2023-04-14
 ### Added
 - `consistent-type-specifier-style` rule

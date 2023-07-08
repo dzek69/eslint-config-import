@@ -64,7 +64,7 @@ const style = {
         "prefer-inline": false,
     }],
     "import/no-namespace": OFF,
-    "import/extensions": [ERROR, "ignorePackages", { "js": "always", "ts": "never" }],
+    "import/extensions": OFF, // TODO make configurable with flat configs
     "import/order": [ERROR, {
         "groups": [
             "builtin", "external", "type", "internal", "parent", "sibling", "index", "object", "unknown"
@@ -76,8 +76,9 @@ const style = {
                 position: "before"
             },
             {
-                pattern: "*.+(scss|css)",
+                pattern: "*.{css,scss}",
                 group: "unknown",
+                patternOptions: { matchBase: true },
                 position: "before",
             }
         ],
